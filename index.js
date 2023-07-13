@@ -67,7 +67,7 @@ app.post('/', async (req, res) => {
 
 const options = {
         key: fs.readFileSync("./key.pem", "utf8"),
-        cert: fs.readFileSync("./cert.pem", "utf8")
+        cert: fs.readFileSync("./cert.crt", "utf8")
 }
 https.createServer(options, app).listen(80)
 // app.listen(80, () => {
