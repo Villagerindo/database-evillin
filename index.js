@@ -1,5 +1,4 @@
 const express = require('express')
-const https = require('https')
 const app = express()
 const fs = require('fs')
 const { EventEmitter } = require('events')
@@ -54,7 +53,7 @@ app.get('/', async (req, res) => {
         isOpen.setState(true)
 })
 
-app.post('/', async (req, res) => {
+app.post('/database', async (req, res) => {
         if (req.headers['Content-Type'] === 'application/json') return res.status(401).json({
                 error: 'Invalid Type',
                 message: 'Content-Type must be application/json'
@@ -65,11 +64,6 @@ app.post('/', async (req, res) => {
         isOpen.setState(true)
 })
 
-const options = {
-        key: fs.readFileSync("./key.pem", "utf8"),
-        cert: fs.readFileSync("./cert.crt", "utf8")
-}
-https.createServer(options, app).listen(80)
-// app.listen(80, () => {
-// console.log("Website telah dijalankan...")
-// })
+app.listen(80, () => {
+  console.log("Website telah dijalankan...")
+ })

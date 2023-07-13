@@ -1,1 +1,143 @@
-{}
+{
+  "users": {
+    "6287833362646@s.whatsapp.net": {
+      "exp": 67,
+      "limit": 10,
+      "lastclaim": 0,
+      "registered": false,
+      "name": "Dani Putra Akbar",
+      "age": -1,
+      "regTime": -1,
+      "afk": -1,
+      "afkReason": "",
+      "banned": false,
+      "level": 0,
+      "call": 0,
+      "role": "Beginner",
+      "customRoleName": "",
+      "customRole": false,
+      "autolevelup": false,
+      "pc": 1689282790127,
+      "warning": 0,
+      "lang": "id",
+      "menfess": []
+    },
+    "6287877151132@s.whatsapp.net": {
+      "exp": 0,
+      "limit": 10,
+      "lastclaim": 0,
+      "registered": false,
+      "name": "Bot Evillin (A.I)",
+      "age": -1,
+      "regTime": -1,
+      "afk": -1,
+      "afkReason": "",
+      "banned": false,
+      "level": 0,
+      "call": 0,
+      "role": "Beginner",
+      "customRoleName": "",
+      "customRole": false,
+      "autolevelup": false,
+      "pc": 0,
+      "warning": 0,
+      "lang": "id",
+      "menfess": []
+    },
+    "6288239259728@s.whatsapp.net": {
+      "exp": 26,
+      "limit": 10,
+      "lastclaim": 0,
+      "registered": false,
+      "name": "Plufvy何?",
+      "age": -1,
+      "regTime": -1,
+      "afk": -1,
+      "afkReason": "",
+      "banned": false,
+      "level": 0,
+      "call": 0,
+      "role": "Beginner",
+      "customRoleName": "",
+      "customRole": false,
+      "autolevelup": false,
+      "pc": 0,
+      "warning": 0,
+      "lang": "id",
+      "menfess": []
+    }
+  },
+  "chats": {
+    "6287833362646@s.whatsapp.net": {
+      "isBanned": false,
+      "isNSFW": false,
+      "welcome": false,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "descUpdate": true,
+      "stiker": false,
+      "delete": true,
+      "antiLink": false,
+      "expired": 0,
+      "antiBadword": true,
+      "viewonce": true,
+      "ads": 0
+    },
+    "120363022717211770@g.us": {
+      "isBanned": false,
+      "isNSFW": false,
+      "welcome": false,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "descUpdate": true,
+      "stiker": false,
+      "delete": true,
+      "antiLink": false,
+      "expired": 0,
+      "antiBadword": true,
+      "viewonce": true,
+      "ads": 0
+    }
+  },
+  "stats": {
+    "prem-ai.js": {
+      "total": 3,
+      "success": 0,
+      "last": 1689282823156,
+      "lastSuccess": 0
+    },
+    "chatgpt-gratisan.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1689282818037,
+      "lastSuccess": 0
+    }
+  },
+  "msgs": {},
+  "sticker": {},
+  "settings": {
+    "6287877151132@s.whatsapp.net": {
+      "anon": true,
+      "anticall": true,
+      "antispam": true,
+      "antitroli": true,
+      "backup": true,
+      "backupDB": 0,
+      "groupOnly": false,
+      "jadibot": false,
+      "status": 0,
+      "self": false,
+      "autoread": false,
+      "restrict": false,
+      "chatModGroup": false,
+      "chatModPrivate": false,
+      "msgtes": []
+    }
+  }
+}
