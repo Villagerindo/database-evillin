@@ -1,4 +1,5 @@
 const express = require('express')
+const https = require('https')
 const app = express()
 const fs = require('fs')
 const { EventEmitter } = require('events')
@@ -33,15 +34,15 @@ class Stater extends EventEmitter {
 const isOpen = new Stater
 
 const allowOnlyIp = (req, res, next) => {
- const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56"]
- const userIp = req.ip
-const infoIp = userIp.replace("::ffff:","")
-console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah mengakses website Anda!: ") + chalk.white(infoIp))
- if (allowedIp.includes(userIp)) {
-  next() 
- } else {
-  res.status(403).send("Forbidden")
- }
+        const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56"]
+        const userIp = req.ip
+        const infoIp = userIp.replace("::ffff:", "")
+        console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah mengakses website Anda!: ") + chalk.white(infoIp))
+        if (allowedIp.includes(userIp)) {
+                next()
+        } else {
+                res.status(403).send("Forbidden")
+        }
 }
 
 app.use(allowOnlyIp)
@@ -64,6 +65,11 @@ app.post('/', async (req, res) => {
         isOpen.setState(true)
 })
 
-app.listen(80, () => {
-console.log("Website telah dijalankan...")
-})
+const options = {
+        key: fs.readFileSync("./key.pem", "utf8"),
+        cert: fs.readFileSync("./cert.pem", "utf8")
+}
+https.createServer(options, app).listen(80)
+// app.listen(80, () => {
+// console.log("Website telah dijalankan...")
+// })
