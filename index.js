@@ -33,7 +33,7 @@ class Stater extends EventEmitter {
 const isOpen = new Stater
 
 const allowOnlyIp = (req, res, next) => {
-        const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56"]
+        const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56", "::ffff:140.213.173.71"]
         const userIp = req.ip
         const infoIp = userIp.replace("::ffff:", "")
         console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah mengakses website Anda!: ") + chalk.white(infoIp))
