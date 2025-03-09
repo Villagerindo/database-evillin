@@ -32,20 +32,23 @@ class Stater extends EventEmitter {
 
 const isOpen = new Stater
 
-const allowOnlyIp = (req, res, next) => {
-        const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56", "::ffff:140.213.173.71"]
+// const allowOnlyIp = (req, res, next) => {
+//         const allowedIp = ["::ffff:167.172.86.224", "::ffff:157.230.46.56", "::ffff:140.213.173.71", "::1", "100.125.77.96"]
+//         const userIp = req.ip
+//         const infoIp = userIp.replace("::ffff:", "")
+//         console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah mengakses website Anda!: ") + chalk.white(infoIp))
+//         if (allowedIp.includes(userIp)) {
+//                 next()
+//         } else {
+//                 res.status(403).send("Forbidden")
+//         }
+// }
+
+// app.use(allowOnlyIp)
+app.get('/', async (req, res) => {
         const userIp = req.ip
         const infoIp = userIp.replace("::ffff:", "")
         console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah mengakses website Anda!: ") + chalk.white(infoIp))
-        if (allowedIp.includes(userIp)) {
-                next()
-        } else {
-                res.status(403).send("Forbidden")
-        }
-}
-
-app.use(allowOnlyIp)
-app.get('/', async (req, res) => {
         res.setHeader('Content-Type', 'application/json')
         await isOpen.waitForTrue()
         isOpen.setState(false)
@@ -53,7 +56,10 @@ app.get('/', async (req, res) => {
         isOpen.setState(true)
 })
 
-app.post('/database', async (req, res) => {
+app.post('/', async (req, res) => {
+        const userIp = req.ip
+        const infoIp = userIp.replace("::ffff:", "")
+        console.log(chalk.red("[!]") + chalk.yellow("Ip berikut telah memposting ke database Anda!: ") + chalk.white(infoIp))
         if (req.headers['Content-Type'] === 'application/json') return res.status(401).json({
                 error: 'Invalid Type',
                 message: 'Content-Type must be application/json'
@@ -64,6 +70,6 @@ app.post('/database', async (req, res) => {
         isOpen.setState(true)
 })
 
-app.listen(80, () => {
-  console.log("Website telah dijalankan...")
- })
+app.listen(3400, () => {
+        console.log("Website telah dijalankan...")
+})
